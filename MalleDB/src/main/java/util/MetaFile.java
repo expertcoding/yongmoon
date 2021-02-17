@@ -124,21 +124,22 @@ public class MetaFile {
                 ", Refrenceid='" + Refrenceid + '\'' +
                 '}';
     }
-    /*public MetaFile Stringto(String meta){
+ public MetaFile Stringto(String metadata, MetaFile metafile){
         String[] info = new String[8];
         for(int i = 0; i <8; i++)
         {
-            info[i] = meta.split(",")[i];
+            info[i] = metadata.split(",")[i];
         }
-        hot= info[0].subString(token[0].length());
-        order= info[1].subString(token[1].length());
-        id = info[2].subString(token[2].length());
-        size = info[3].subString(token[3].length());
-        key = info[4].subString(token[4].length(),info[4].lastIndexOf("\'"));
-        name = info[5].subString(token[5].length(),info[5].lastIndexOf("\'"));
-        userid = info[6].subString(token[6].length(),info[6].lastIndexOf("\'"));
-        Refrenceid = info[7].subString(token[7].length(),info[7].lastIndexOf("\'"));
-    }*/
+        metafile.sethot(Boolean.parseBoolean(info[0].substring(token[0].length())));
+        metafile.setOrder(Integer.parseInt(info[1].substring(token[1].length())));
+        metafile.setid(Integer.parseInt(info[2].substring(token[2].length())));
+        metafile.setsize(Integer.parseInt(info[3].substring(token[3].length())));
+        metafile.setKey(info[4].substring(token[4].length(),info[4].lastIndexOf("\'")));
+        metafile.setname(info[5].substring(token[5].length(),info[5].lastIndexOf("\'")));
+        metafile.setUserid(info[6].substring(token[6].length(),info[6].lastIndexOf("\'")));
+        metafile.setRefrenceid(info[7].substring(token[7].length(),info[7].lastIndexOf("\'")));
 
+        return metafile;
+    }
 
 }
